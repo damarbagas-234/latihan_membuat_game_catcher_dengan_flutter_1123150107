@@ -16,7 +16,12 @@ class FruitCatcherGame extends FlameGame
   late TextComponent scoreText;
   final Random random = Random();
   double fruitSpawnTimer = 0;
-  final double fruitSpawnInterval = 1.5;
+  double fruitSpawnInterval = 1.5;
+  
+  // Spawn interval decreases with difficulty
+  void updateSpawnInterval() {
+    fruitSpawnInterval = (1.5 - (difficultyLevel * 0.1)).clamp(0.5, 1.5);
+  }
   
   // Difficulty level tracking
   int difficultyLevel = 1;
