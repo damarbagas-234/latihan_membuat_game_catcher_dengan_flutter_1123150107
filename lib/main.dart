@@ -27,17 +27,6 @@ class GameScreen extends StatefulWidget {
   State<GameScreen> createState() => _GameScreenState();
 }
 
-// High score storage
-class GamePreferences {
-  static int highScore = 0;
-  
-  static void updateHighScore(int currentScore) {
-    if (currentScore > highScore) {
-      highScore = currentScore;
-    }
-  }
-}
-
 class _GameScreenState extends State<GameScreen> {
   late FruitCatcherGame game;
 
@@ -86,41 +75,20 @@ class _GameScreenState extends State<GameScreen> {
           Positioned(
             top: 50,
             right: 20,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    'High Score: 9999',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                IconButton(
+                  icon: Icon(Icons.music_note),
+                  onPressed: () {
+                    AudioManager().toggleMusic();
+                  },
                 ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.music_note),
-                      onPressed: () {
-                        AudioManager().toggleMusic();
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.volume_up),
-                      onPressed: () {
-                        AudioManager().toggleSfx();
-                      },
-                    ),
-                  ],
+                IconButton(
+                  icon: Icon(Icons.volume_up),
+                  onPressed: () {
+                    AudioManager().toggleSfx();
+                  },
                 ),
               ],
             ),
