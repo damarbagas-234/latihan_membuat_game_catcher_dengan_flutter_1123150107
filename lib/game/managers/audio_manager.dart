@@ -19,9 +19,9 @@ class AudioManager {
     try {
       await FlameAudio.audioCache.loadAll([
         'music/instrumental.mp3',
-        'sfx/explode.mp3',
-        'sfx/collect.mp3',
-        'sfx/toet_kowek.mp3',
+        'sfx/assets_audio_sfx_explode.mp3',
+        'sfx/assets_audio_sfx_collect.mp3',
+        'sfx/assets_audio_sfx_toet_kowek.mp3',
       ]);
       print('Audio Initialize Successfully');
     } catch (e) {

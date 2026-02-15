@@ -9,7 +9,6 @@ import 'package:game_project/game/components/basket.dart';
 import 'package:game_project/game/components/fruit.dart';
 import 'package:game_project/game/managers/audio_manager.dart';
 
-
 class FruitCatcherGame extends FlameGame
     with PanDetector, HasCollisionDetection {
   late Basket basket;
@@ -17,12 +16,12 @@ class FruitCatcherGame extends FlameGame
   final Random random = Random();
   double fruitSpawnTimer = 0;
   double fruitSpawnInterval = 1.5;
-  
+
   // Spawn interval decreases with difficulty
   void updateSpawnInterval() {
     fruitSpawnInterval = (1.5 - (difficultyLevel * 0.1)).clamp(0.5, 1.5);
   }
-  
+
   // Difficulty level tracking
   int difficultyLevel = 1;
   int fruitsCollected = 0;
@@ -80,11 +79,11 @@ class FruitCatcherGame extends FlameGame
 
   void incrementScore() {
     score++;
-    AudioManager().playSfx('collect.mp3');
+    AudioManager().playSfx('assets_audio_sfx_collect.mp3');
   }
 
   void gameOver() {
-    AudioManager().playSfx('explode.mp3');
+    AudioManager().playSfx('assets_audio_sfx_explode.mp3');
     pauseEngine();
   }
 
