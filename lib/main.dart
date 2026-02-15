@@ -27,6 +27,17 @@ class GameScreen extends StatefulWidget {
   State<GameScreen> createState() => _GameScreenState();
 }
 
+// High score storage
+class GamePreferences {
+  static int highScore = 0;
+  
+  static void updateHighScore(int currentScore) {
+    if (currentScore > highScore) {
+      highScore = currentScore;
+    }
+  }
+}
+
 class _GameScreenState extends State<GameScreen> {
   late FruitCatcherGame game;
 
