@@ -28,6 +28,9 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        
+        // Enable hardware acceleration for better game performance
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
