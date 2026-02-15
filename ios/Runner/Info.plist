@@ -45,5 +45,10 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- Game Performance Optimization -->
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>CAPreferredFramesPerSecond</key>
+	<integer>60</integer>
 </dict>
 </plist>
