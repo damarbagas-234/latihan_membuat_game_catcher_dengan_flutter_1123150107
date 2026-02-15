@@ -75,20 +75,41 @@ class _GameScreenState extends State<GameScreen> {
           Positioned(
             top: 50,
             right: 20,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                IconButton(
-                  icon: Icon(Icons.music_note),
-                  onPressed: () {
-                    AudioManager().toggleMusic();
-                  },
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    'High Score: 9999',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.volume_up),
-                  onPressed: () {
-                    AudioManager().toggleSfx();
-                  },
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.music_note),
+                      onPressed: () {
+                        AudioManager().toggleMusic();
+                      },
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.volume_up),
+                      onPressed: () {
+                        AudioManager().toggleSfx();
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
