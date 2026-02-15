@@ -17,6 +17,10 @@ class FruitCatcherGame extends FlameGame
   final Random random = Random();
   double fruitSpawnTimer = 0;
   final double fruitSpawnInterval = 1.5;
+  
+  // Difficulty level tracking
+  int difficultyLevel = 1;
+  int fruitsCollected = 0;
 
   final ValueNotifier<int> scoreNotifier = ValueNotifier<int>(0);
   int _score = 0;
